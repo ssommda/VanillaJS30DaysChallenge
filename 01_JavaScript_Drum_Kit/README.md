@@ -11,5 +11,5 @@
 2. 입력된 keyCode와 같은 data-key 속성을 가지고 있는 audio를 play 한다.
 
 ## 개선방안
-* 절차형이 아닌 함수형 프로그래밍으로 리팩토링
-* ES6의 class 문법을 사용해 리팩토링
+* 절차형이 아닌 함수형 프로그래밍으로 리팩토링 => update complete
+* ES6의 class 문법을 사용해 리팩토링 => update complete
