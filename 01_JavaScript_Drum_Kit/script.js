@@ -1,27 +1,36 @@
-const addClassPlaying = element => {
-    element.classList.add('playing');
-    setTimeout( () => {
-        element.classList.remove('playing')
-        }, 70
-    );
-};
-
-const playMusic = keyCode => {
-    const audio = document.querySelector(`audio[data-key='${keyCode}']`);
-    const button = document.querySelector(`div[data-key='${keyCode}']`);
-    if(!button) {
-        return false;
+class PlayDrum {
+    constructor(num) {
+        this.keyCode = num;
     }
 
-    addClassPlaying(button);
-    audio.play();
-};
+    static findAudio(keyCode) {
+        return document.querySelector(`audio[data-key='${keyCode}']`);
+    }
 
+    static findButton(keyCode) {
+        return document.querySelector(`div[data-key='${keyCode}']`);
+    }
+
+    static addClassPaying(element) {
+        element.classList.add('playing');
+        setTimeout( () => {
+              element.classList.remove('playing')
+          }, 70
+        );
+    }
+
+    play() {
+        const audio = PlayDrum.findAudio(this.keyCode);
+        const button = PlayDrum.findButton(this.keyCode);
+        PlayDrum.addClassPaying(button);
+        audio.play();
+    }
+}
 
 const handleKeyPress = e => {
     const keyCode = e.keyCode;
-    playMusic(keyCode);
+    const playDrum = new PlayDrum(keyCode);
+    playDrum.play();
 };
 
 window.addEventListener('keydown', handleKeyPress);
-
