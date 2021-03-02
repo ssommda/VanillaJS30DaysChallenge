@@ -24,6 +24,8 @@ class PlayDrum {
         const button = PlayDrum.findButton(this.keyCode);
         PlayDrum.addClassPaying(button);
         audio.play();
+
+        // 1. 피쳐브랜치에서 커밋 생성
     }
 }
 
