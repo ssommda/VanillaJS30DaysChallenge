@@ -26,6 +26,7 @@ class PlayDrum {
         audio.play();
 
         // 1. 피쳐브랜치에서 커밋 생성
+        // 2. 원격 브랜치에 푸시
     }
 }
 
